@@ -1,4 +1,5 @@
 const { config } = require('../config.js');
+const texts = require('../modules/texts.js');
 
 module.exports = async function(message) {
 	const bot = message.client;
@@ -18,6 +19,8 @@ module.exports = async function(message) {
 		message.channel.send('Hallo, Senang bertemu dengan kamu. Oiya, kamu boleh kok ngajak kita-kita buat diskusi atau guyon guyon receh hehehe');
 		message.channel.send('Semoga harimu menyenangkan');
 	}
+
+	if (message.content.startsWith('<@573032392403582976>') || message.content.startsWith('<@!573032392403582976>')) message.channel.send(`${texts.MentionedTexts(bot)} ${texts.MentionedEmojis()}`);
 
 	// Get commands from the commands list that user want
 	if (bot.commands.has(command)) cmd = bot.commands.get(command);
