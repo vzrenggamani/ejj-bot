@@ -1,0 +1,19 @@
+exports.run = (bot, message, args) => {
+
+};
+
+exports.conf = {
+	aliases: [''],
+	cooldown: 1,
+	guildOnly: false,
+	userPerm: [''],
+	botPerm: [''],
+};
+
+exports.help = {
+	name: '',
+	category: '',
+	description: '',
+	usage: '',
+	param: '',
+};
