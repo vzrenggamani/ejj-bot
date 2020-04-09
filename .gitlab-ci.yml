@@ -18,7 +18,7 @@ test:
     - npm install
     - npm test
   coverage:
-    'All files[^|]*\|[^|]*\s+([\d\.]+)'
+    [^|]*\|[^|]*\s+([\d\.]+)
 
 code_quality:
   allow_failure: true
