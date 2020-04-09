@@ -14,6 +14,11 @@ module.exports = async function(message) {
 	// Ignore message if not starts with bot prefix
 	if (!message.content.startsWith(prefix)) return;
 
+	if (message.content.includes === 'Halo') {
+		message.channel.send('Hallo, Senang bertemu dengan kamu. Oiya, kamu boleh kok ngajak kita-kita buat diskusi atau guyon guyon receh hehehe');
+		message.channel.send('Semoga harimu menyenangkan');
+	}
+
 	// Get commands from the commands list that user want
 	if (bot.commands.has(command)) cmd = bot.commands.get(command);
 
