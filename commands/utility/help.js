@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const bot = new Discord.Client();
 const fs = require('fs');
 
 exports.run = (bot, message, args, prefix) => {
@@ -57,14 +58,13 @@ exports.run = (bot, message, args, prefix) => {
 			`**${args[0]}** is not a command, nor aliases! (QωQ)`,
 			`Please run __${prefix}help__ for available commands, **${message.author.username}** (OωO)`,
 		].random();
-		const notFoundEmbed = new Discord.MessageEmbed()
+		const embed = new Discord.MessageEmbed()
 			.setAuthor('Not found!')
 			.setThumbnail('https://tinyurl.com/MikuError')
 			.setColor(0xf44336)
 			.setDescription(idk);
-		message.channel.send({ notFoundEmbed });
-	}
-	// END CATCH
+		message.channel.send({ embed });
+	} // END CATCH
 };
 
 exports.conf = {

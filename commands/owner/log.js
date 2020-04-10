@@ -41,7 +41,6 @@ exports.run = (bot, message, args) => {
 	bot.channels
 		.get('462167632389341184')
 		.send({ embed })
-		// eslint-disable-next-line no-unused-vars
 		.catch(_ =>
 			message.channel.send('It seems like you\'re not giving valid format!'),
 		);

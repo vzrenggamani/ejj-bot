@@ -1,7 +1,8 @@
 const chalk = require('chalk');
 const walker = require('walker');
+const { get } = require('snekfetch');
+const fs = require('fs');
 
-/* eslint-disable no-unused-vars */
 module.exports = (bot, message) => {
 
 	// RANDOM

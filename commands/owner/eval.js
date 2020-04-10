@@ -1,4 +1,3 @@
-/*eslint-disable */
 const util = require('util');
 exports.run = async (bot, message, args) => {
 	if (message.author.id != '303011486916411392' || !args[0]) {return message.channel.send(':question:');}

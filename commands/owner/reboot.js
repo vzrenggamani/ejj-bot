@@ -1,4 +1,4 @@
-exports.run = (bot, message) => {
+exports.run = (bot, message, args) => {
 	// prettier-ignore
 	if (message.author.id != '303011486916411392') return message.channel.send(':question:');
 	process.exit(1);
