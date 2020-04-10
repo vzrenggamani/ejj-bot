@@ -54,6 +54,7 @@ module.exports = async function(message) {
 	const ran = `${message.author.tag}  ::  ${message.author.id}
 	=====================================
 	command ran : ${command}
+	command name: ${cmdname}
 	content     : ${args.join(' ')}
 	guild name  : ${message.guild.name}
 	guild ID    : ${message.guild.id}

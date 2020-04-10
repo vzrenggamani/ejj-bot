@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const texts = {
 	MentionedEmojis: () => {
 		// prettier-ignore
