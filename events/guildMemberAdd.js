@@ -1,4 +1,5 @@
 // const Discord = require('discord.js');
+const texts = require('../modules/texts.js');
 
 module.exports = member => {
 	/*
@@ -13,6 +14,6 @@ module.exports = member => {
 	*/
 	// Send Mention to new user
 	const channel = member.guild.channels.cache.get('692369772742049883');
-	channel.send(`Selamat datang <@${member.user.id}>! Jangan lupa untuk Intro di channel chat ya. Biar kita semua kenal oke :) Tengkyuu`);
+	channel.send(texts.WelcomeMessage);
 	console.log('New member has joined!');
 };

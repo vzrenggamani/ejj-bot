@@ -12,15 +12,15 @@ module.exports = async function(message) {
 	const prefix = config.prefix;
 	let cmd;
 
-	// Ignore message if not starts with bot prefix
-	if (!message.content.startsWith(prefix)) return;
-
 	if (message.content.includes === 'Halo') {
 		message.channel.send('Hallo, Senang bertemu dengan kamu. Oiya, kamu boleh kok ngajak kita-kita buat diskusi atau guyon guyon receh hehehe');
 		message.channel.send('Semoga harimu menyenangkan');
 	}
 
 	if (message.content.startsWith('<@573032392403582976>') || message.content.startsWith('<@!573032392403582976>')) message.channel.send(`${texts.MentionedTexts(bot)} ${texts.MentionedEmojis()}`);
+
+	// Ignore message if not starts with bot prefix
+	if (!message.content.startsWith(prefix)) return;
 
 	// Get commands from the commands list that user want
 	if (bot.commands.has(command)) cmd = bot.commands.get(command);
