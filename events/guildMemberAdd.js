@@ -14,6 +14,6 @@ module.exports = member => {
 	*/
 	// Send Mention to new user
 	const channel = member.guild.channels.cache.get('692369772742049883');
-	channel.send(texts.WelcomeMessage);
+	channel.send(texts.WelcomeMessage(member));
 	console.log('New member has joined!');
 };
