@@ -62,7 +62,6 @@ module.exports = message => {
 	if (bot.commands.has(command)) {
 		find = bot.commands.get(command); // find the command
 		theCmd = find.help.name; // find command's name
-		cd = find.conf.cooldown * 1000; // find the cooldown and then make it second
 		userperm = find.conf.userPerm; // get required user's permission
 		botperm = find.conf.botPerm; // get required miku's permission
 		userperm[0].length == 0 ? (userperm = 'SEND_MESSAGES') : ''; // if no specific permission is defined, define it into SEND_MESSAGES
@@ -72,7 +71,6 @@ module.exports = message => {
 	else if (bot.aliases.has(command)) {
 		find = bot.commands.get(bot.aliases.get(command));
 		theCmd = find.help.name;
-		cd = find.conf.cooldown * 1000;
 		userperm = find.conf.userPerm;
 		botperm = find.conf.botPerm;
 		userperm[0].length == 0 ? (userperm = 'SEND_MESSAGES') : '';
