@@ -19,6 +19,8 @@ test:
     - npm test
   coverage:
     /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  after_script:
+    - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
 
 code_quality:
   allow_failure: true
