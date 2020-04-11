@@ -14,13 +14,17 @@ stages:
     - test
     
 test:
-  script:
+  before_script:
     - npm install
+    - npm install -g codecov
+    - npm install -g nyc
+  script:
     - npm test
+  after_script:
+    - npm report-coverage
+    - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
   coverage:
     /All files[^|]*\|[^|]*\s+([\d\.]+)/
-  after_script:
-    - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
 
 code_quality:
   allow_failure: true

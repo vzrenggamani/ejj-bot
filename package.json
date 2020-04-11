@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "eslint .",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "fix": "eslint . --fix",
     "start": "node index.js"
   },
