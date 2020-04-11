@@ -32,12 +32,6 @@ module.exports = (bot, message) => {
 				bot.commandsConf.set(props.help.name, props.conf.guildOnly);
 				// set the command's name
 				bot.commands.set(props.help.name, props);
-				// set the command's cooldown
-				bot.cdTime.set(props.help.name, props.conf.cooldown * 1000);
-				// then the aliases
-				props.conf.aliases.forEach(alias => {
-					bot.aliases.set(alias, props.help.name);
-				});
 			});
 			console.log(chalk.bgWhite.black(`Loaded ${commandName}`));
 			return false;
