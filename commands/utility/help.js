@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars, no-shadow */
+/* eslint-disable no-unused-vars, no-undef, no-shadow */
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require('fs');
@@ -12,7 +12,7 @@ exports.run = (bot, message, args, prefix) => {
 	const commands = {};
 	try {
 		// prettier-ignore
-		embed.setAuthor('Event Jepang Jatim Bot -- Help', 'http://ejj.id/bot')
+		embed.setAuthor('Miku -- Help', 'http://tinyurl.com/ybabktzo')
 			.setColor(0x0776b7)
 			.setFooter(`Use ${prefix}help <command name> for advanced help. (Including usage, aliases, etc.)`);
 		// all commands
