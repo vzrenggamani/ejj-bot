@@ -22,4 +22,6 @@ yarn.lock
 
 #misc
 .env
+.nyc_output
+coverage.lcov
 
