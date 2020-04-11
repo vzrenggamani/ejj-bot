@@ -16,7 +16,8 @@ exports.run = async (bot, message, args) => {
 
 	// STATEMENT
 	// prettier-ignore
-	!args[0] ? ((description = idkD), (image = idkI)) : ((description = wordAnswer), (image = answers.url)); // BEGIN
+	!args[0] ? ((description = idkD), (image = idkI)) : ((description = wordAnswer), (image = answers.url));
+	// BEGIN
 	const embed = new Discord.MessageEmbed()
 		.setAuthor('Miku -- Hug', '', `${image}`)
 		.setColor(0x1a9ca8)

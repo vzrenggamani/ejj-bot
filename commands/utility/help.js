@@ -1,7 +1,9 @@
 const Discord = require('discord.js');
+// eslint-disable-next-line no-unused-vars
 const bot = new Discord.Client();
 const fs = require('fs');
 
+// eslint-disable-next-line no-shadow
 exports.run = (bot, message, args, prefix) => {
 	const embed = new Discord.MessageEmbed();
 	// variables
@@ -58,13 +60,15 @@ exports.run = (bot, message, args, prefix) => {
 			`**${args[0]}** is not a command, nor aliases! (QωQ)`,
 			`Please run __${prefix}help__ for available commands, **${message.author.username}** (OωO)`,
 		].random();
+		// eslint-disable-next-line no-shadow
 		const embed = new Discord.MessageEmbed()
 			.setAuthor('Not found!')
 			.setThumbnail('https://tinyurl.com/MikuError')
 			.setColor(0xf44336)
 			.setDescription(idk);
 		message.channel.send({ embed });
-	} // END CATCH
+	}
+	// END CATCH
 };
 
 exports.conf = {

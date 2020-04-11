@@ -17,6 +17,7 @@ bot.aliases = new Enmap();
 bot.commandsConf = new Enmap();
 
 const init = async () => {
+	// eslint-disable-next-line no-unused-vars
 	const folder = walker('./commands/').on('file', file => {
 		if (!file.endsWith('.js')) return;
 		const response = bot.loadCommand(file);

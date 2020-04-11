@@ -29,6 +29,7 @@ module.exports = async function(message) {
 	if (!cmd) return;
 
 	// Assign conf config to run commands
+	// eslint-disable-next-line no-unused-vars
 	let find, cmdname, userperm, botperm;
 	if (bot.commands.has(command)) {
 		find = bot.commands.get(command),
