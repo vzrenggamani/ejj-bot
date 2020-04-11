@@ -21,7 +21,7 @@ test:
   script:
     - npm test
   after_script:
-    - npm report-coverage
+    - nyc report --reporter=text-lcov > coverage.lcov && codecov
     - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
   coverage:
     /All files[^|]*\|[^|]*\s+([\d\.]+)/
