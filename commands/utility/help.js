@@ -1,9 +1,8 @@
+/* eslint-disable no-unused-vars, no-shadow */
 const Discord = require('discord.js');
-// eslint-disable-next-line no-unused-vars
 const bot = new Discord.Client();
 const fs = require('fs');
 
-// eslint-disable-next-line no-shadow
 exports.run = (bot, message, args, prefix) => {
 	const embed = new Discord.MessageEmbed();
 	// variables
@@ -13,7 +12,7 @@ exports.run = (bot, message, args, prefix) => {
 	const commands = {};
 	try {
 		// prettier-ignore
-		embed.setAuthor('Event Jepang Jatim Bot -- Help', 'http://ejj.id/bot')
+		embed.setAuthor('Miku -- Help', 'http://tinyurl.com/ybabktzo')
 			.setColor(0x0776b7)
 			.setFooter(`Use ${prefix}help <command name> for advanced help. (Including usage, aliases, etc.)`);
 		// all commands
@@ -60,7 +59,6 @@ exports.run = (bot, message, args, prefix) => {
 			`**${args[0]}** is not a command, nor aliases! (QωQ)`,
 			`Please run __${prefix}help__ for available commands, **${message.author.username}** (OωO)`,
 		].random();
-		// eslint-disable-next-line no-shadow
 		const embed = new Discord.MessageEmbed()
 			.setAuthor('Not found!')
 			.setThumbnail('https://tinyurl.com/MikuError')

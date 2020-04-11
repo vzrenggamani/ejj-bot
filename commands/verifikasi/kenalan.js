@@ -1,34 +1,15 @@
-// const Discord = require('discord.js');
-
-exports.run = (bot, message) => {
-
-	/* const embed = new Discord.MessageEmbed()
-		.setAuthor('Daftar pilihan region yang tersedia')
-		.setDescription(`Selamat datang **${message.member.username}**\n`)
-		// Add field region - JSON / Tembak manual add field
-		.setFooter('Event Jepang Jatim - Discord Server', bot.user.displayAvatarURL())
-		.setColor('0xf5ab35'); */
-
-	if (!message.guild.me.hasPermission('MANAGE_NICKNAMES')) {return message.channel.send('I don\'t have permission to change your nickname!');}
-	else {
-		message.channel.send(`Hallo <@${message.member.user.id}>. Makasih udah mau join di EJJ. Kalo boleh tau nama panggilan kamu siapa nih?`);
-		// only listen to message author
-		const filter = m =>m.author.id === message.author.id;
-		// collect the message
-		const collector = message.channel.createMessageCollector(filter, { time: 15000 });
-
-		collector.on('collect', m => {
-			// 1st input as name & 2nd input as region and role
-
-			// Change user nick 1st input + 2nd input
-			message.member.setNickname(m.content);
-			// Give the user role based on 2nd input
-
-			// Print to log and log file
-			console.log(`Collected ${m.content}`);
-		});
-
-	}
+exports.run = (bot, message, args) => {
+	if (message.author.id != '303011486916411392' || !args[0]) {return message.channel.send(':question:');}
+	// Only listen to message author message
+	const filter = m =>m.author.id === message.author.id;
+	message.channel.send(`Hallo <@${message.member.user.id}>. Makasih udah mau join di EJJ. Kalo boleh tau nama panggilan kamu siapa nih?`).then(() => {
+		message.channel.awaitMessages(filter, { max: 1, time: 15000, errors: ['time'] })
+			.then(nama => console.log(nama.content))
+			.then(message.channel.send('Kamu dari region mana nih?').then(() => {
+				message.channel.awaitMessages(filter, { max: 1, time: 15000, errors: ['time'] })
+					.then(region => console.log(region.content));
+			}));
+	});
 };
 
 exports.conf = {
