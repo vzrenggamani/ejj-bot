@@ -1,7 +1,7 @@
-exports.run = (bot, message, args) => {
-	if (message.author.id != '303011486916411392' || !args[0]) {return message.channel.send(':question:');}
-	const adminrole = message.guild.roles.cache.find(role => role.id === '690230171432648873');
-	if (message.member.roles.cache.some(role => role.id === '690230171432648873')) {
+exports.run = (bot, message) => {
+	if (message.author.id != '303011486916411392') {return message.channel.send(':question:');}
+	const adminrole = message.guild.roles.cache.find(role => role.id === '698604670800887840');
+	if (message.member.roles.cache.some(role => role.id === '698604670800887840')) {
 		message.channel.send('Okay!');
 	}
 	else {

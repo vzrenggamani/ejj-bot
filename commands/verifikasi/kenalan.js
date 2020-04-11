@@ -1,5 +1,5 @@
-exports.run = (bot, message, args) => {
-	if (message.author.id != '303011486916411392' || !args[0]) {return message.channel.send(':question:');}
+exports.run = (bot, message) => {
+	if (message.author.id != '303011486916411392') {return message.channel.send(':question:');}
 	// Only listen to message author message
 	const filter = m =>m.author.id === message.author.id;
 	message.channel.send(`Hallo <@${message.member.user.id}>. Makasih udah mau join di EJJ. Kalo boleh tau nama panggilan kamu siapa nih?`).then(() => {

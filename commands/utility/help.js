@@ -12,7 +12,7 @@ exports.run = (bot, message, args, prefix) => {
 	const commands = {};
 	try {
 		// prettier-ignore
-		embed.setAuthor('Miku -- Help', 'http://tinyurl.com/ybabktzo')
+		embed.setAuthor('Event Jepang Jatim Bot -- Help', 'http://ejj.id/bot')
 			.setColor(0x0776b7)
 			.setFooter(`Use ${prefix}help <command name> for advanced help. (Including usage, aliases, etc.)`);
 		// all commands
