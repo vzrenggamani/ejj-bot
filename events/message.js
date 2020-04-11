@@ -98,9 +98,4 @@ module.exports = message => {
   guild ID    : ${message.guild.id}
   =====================================\n`;
 	console.log(ran);
-
-	bot.db.push('cooldowns', theCmd, message.author.id); // then push the command used into it
-	setTimeout(() => {
-		bot.db.remove('cooldowns', theCmd, message.author.id); // remove the cooldown
-	}, cd);
 };
