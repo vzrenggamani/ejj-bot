@@ -22,3 +22,5 @@ code_quality:
   allow_failure: true
   artifacts:
     paths: [gl-code-quality-report.json]
+  after_script:
+    - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
