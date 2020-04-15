@@ -4,8 +4,6 @@ const lint = require('mocha-eslint');
 // Note: a seperate Mocha test will be run for each path and each file which
 // matches a glob pattern
 const paths = [
-	'bin',
-	'lib',
 	'tests/**/*Test.js',
 	'modules/**',
 	'events/**',
@@ -24,11 +22,11 @@ const options = {
 	// Defaults to `true`, always show warnings
 
 	// Increase the timeout of the test if linting takes to long
-	timeout: 5000,
+	timeout: 8000,
 	// Defaults to the global mocha `timeout` option
 
 	// Increase the time until a test is marked as slow
-	slow: 1000,
+	slow: 3000,
 	// Defaults to the global mocha `slow` option
 
 	// Consider linting warnings as errors and return failure
