@@ -1,18 +1,6 @@
 exports.run = (bot, message, args) => {
 	// Only respond to owner message
 	if (message.author.id != '303011486916411392') {return message.channel.send(':question:');}
-	if (message.member.roles.cache.some(role => role.id === '698604670800887840' || role.id === '699302221552156732')) {
-		message.channel.send('Udah punya loh');
-		return;
-	}
-
-	/* Give Role Function */
-	function giveownerole(roles) {
-		// Give the role to me
-		message.member.setNickname('Rengga Sidoarjo');
-		message.member.roles.add(roles);
-		message.channel.send('Jangan lupa untuk untuk detach kalo udah selesai');
-	}
 
 	// set the admin role
 	let therole;
@@ -31,8 +19,22 @@ exports.run = (bot, message, args) => {
 		message.channel.send('Tolong hati-hati ya... Bahaya loh');
 	}
 
-	// Give the role
-	giveownerole(therole);
+	/* Give Role Function */
+	function giveownerole(roles) {
+		// Give the role to me
+		message.member.setNickname('Rengga Sidoarjo');
+		message.member.roles.add(roles);
+		message.channel.send('Jangan lupa untuk untuk detach kalo udah selesai');
+	}
+
+	/* Check Already have role or not */
+	if (message.member.roles.cache.some(role => role.id == therole)) {
+		message.channel.send('Udah punya loh');
+	}
+	else {
+		// Give the role
+		giveownerole(therole);
+	}
 };
 
 exports.conf = {
