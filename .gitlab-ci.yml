@@ -15,16 +15,9 @@ test:
     - npm run coverage
   after_script:
     - npm run report-coverage
-  artifacts:
-    paths: [coverage.lcov]
 
 code_quality:
   coverage:
     /All files[^|]*\|[^|]*\s+([\d\.]+)/
-  allow_failure: true
   artifacts:
     paths: [gl-code-quality-report.json]
-  before_script:
-    - npm install -g codecov
-  after_script:
-    - codecov -t $CODECOV_TOKEN
