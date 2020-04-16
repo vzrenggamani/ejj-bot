@@ -8,6 +8,7 @@ echo Author     : Rengga Prakoso Nugroho
 echo ============================================
 
 echo Git Pulling from origin
+git reset --hard origin/master
 git pull --no-edit
 
 echo Refreshing the Glitch Editor
