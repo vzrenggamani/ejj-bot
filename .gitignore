@@ -5,7 +5,6 @@ node_modules/
 #linux-stuff
 *.deb
 *.tar.gz
-*.sh
 
 #my-ideas
 *.old
