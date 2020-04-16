@@ -1,3 +1,22 @@
+-----
+April 16, 2020
+
+[CLIENTS SIDE]
+* [FIXED] Kenalan commands - Fixed by gh://shidoitsuka
+* [FIXED] Admin detach commands
+* [FIXED] Auto Welcomer has been worked successfully
+* [FIXED] Music role has been fixed properly
+* [NEW] Help commands
+* [NEW] Hug commands
+* [NEW] Purge commands for administrator
+
+[DEVELOPER NEED]
+* [NEW] Unit test using mocha + eslint
+* [FIXED] Better code readibility
+* [BUG] Some code doesn't work due to incomplete works
+* [OTHER] Eval commads and Reboot Worked
+
+-----
 April 9, 2020
 * Ping Commands
 * Get "Dugem slurr" role commands
