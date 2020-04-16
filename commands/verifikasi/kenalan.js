@@ -3,7 +3,7 @@ exports.run = async (bot, message) => {
 	// Only listen to message author message
 	const filter = m => message.author.id === m.author.id;
 	let nama, region;
-	await message.channel.send(`Hallo!! @<${message.author.id}. Nama panggilan kamu siapa nih? Biar enak gtu manggilnya.`);
+	await message.channel.send(`Hallo!! <@${message.author.id}>. Nama panggilan kamu siapa nih? Biar enak gtu manggilnya.`);
 	message.channel.awaitMessages(filter, { max: 1, time: 10000, errors: ['time'] })
 		.then((responNama) => {
 			nama = responNama.first().content;
@@ -11,6 +11,7 @@ exports.run = async (bot, message) => {
 			message.channel.awaitMessages(filter, { max: 1, time: 10000, errors: ['time'] }).then((responRegion) => {
 				region = responRegion.first().content;
 				message.channel.send(`${nama} dari ${region}, terima kasih sudah berpartisipasi!`);
+				message.member.setNickname(nama + ' ' + region);
 			}).catch(() => {
 				message.channel.send('Kamu kok nggak masukin region kamu sihh :(. Ulangi lagi yuk verifikasinya!. Biar semua pada kenal');
 			});
@@ -18,7 +19,6 @@ exports.run = async (bot, message) => {
 		.catch(() => {
 			message.channel.send('Kamu kok nggak masukin nama :(. Ulangi lagi yuk verifikasinya!.');
 		});
-	message.member.setNickname(nama + ' ' + region);
 };
 
 exports.conf = {
