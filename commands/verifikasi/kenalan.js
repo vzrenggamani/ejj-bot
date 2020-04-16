@@ -1,4 +1,4 @@
-exports.run = (bot, message) => {
+exports.run = async (bot, message) => {
 	if (message.author.id != '303011486916411392') {return message.channel.send(':question:');}
 	// Only listen to message author message
 	const filter = m => message.author.id === m.author.id;
