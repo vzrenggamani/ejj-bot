@@ -11,7 +11,8 @@
     "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov",
     "coverage": "nyc npm run test",
     "fix": "eslint . --fix",
-    "start": "node index.js"
+    "start": "node index.js",
+    "start:bot": "node bot.js"
   },
   "repository": {
     "type": "git",
