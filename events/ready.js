@@ -1,5 +1,6 @@
+const chalk = require('chalk');
+
 module.exports = bot => {
-	bot.on('ready', () => {
-		console.log('Hai, Aku sudah login!');
-	});
+	console.log(chalk.bgGreen.white(`Logged in as ${bot.user.tag}!`));
+	console.log(chalk.bgGreen.white('Booted up!'));
 };
